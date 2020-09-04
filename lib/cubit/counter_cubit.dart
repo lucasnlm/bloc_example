@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterCubit extends Cubit<CounterState> {
   CounterCubit()
-      : super(CounterState(
-          clicks: 0,
-          value: 0,
-        ));
+      : super(
+          CounterState(
+            clicks: 0,
+            value: 0,
+          ),
+        );
 
   void increaseCounterEvent(int value) {
     emit(
@@ -20,7 +22,7 @@ class CounterCubit extends Cubit<CounterState> {
   void decreaseCounterEvent(int value) {
     emit(
       state.copyWith(
-        clicks: state.clicks + 1,
+        clicks: state.clicks - 1,
         value: state.value + value,
       ),
     );
