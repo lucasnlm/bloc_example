@@ -1,4 +1,6 @@
-class CounterState {
+import 'package:equatable/equatable.dart';
+
+class CounterState extends Equatable {
   CounterState({
     this.clicks,
     this.value,
@@ -16,4 +18,10 @@ class CounterState {
       value: value ?? this.value,
     );
   }
+
+  @override
+  List<Object> get props => [clicks, value];
+
+  @override
+  bool get stringify => true;
 }
